@@ -1,0 +1,9 @@
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\config\DataSourceConfiguration.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\controller\StorageController.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\entity\Storage.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\config\DruidConfig.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\config\MyBatisConfig.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\dao\StorageDAO.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\NacosServiceApplication.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\service\StorageService.java
+D:\workspace\cloud-demo\nacos-test\src\main\java\com\work\framework\swagger\SwaggerConfig.java

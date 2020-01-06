@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="configserver" />
+        <module name="eureka-cloud" />
+        <module name="eurekacloud1" />
+        <module name="feignconsumer" />
+        <module name="hystrixdashboard" />
+        <module name="nacostest" />
+        <module name="ribbonconsumer" />
+        <module name="service-cloud" />
+        <module name="servicecloudtest" />
+        <module name="streamdemo" />
+        <module name="streamdemo2" />
+        <module name="testservice" />
+        <module name="turbine" />
+        <module name="txmanager" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-demo" target="1.8" />
+      <module name="commom-service" target="1.8" />
+      <module name="commomservice" target="1.8" />
+      <module name="configserver" target="1.8" />
+      <module name="eureka-cloud" target="1.8" />
+      <module name="eurekacloud" target="1.8" />
+      <module name="eurekacloud1" target="1.8" />
+      <module name="feignconsumer" target="1.8" />
+      <module name="fescar" target="1.8" />
+      <module name="hystrixdashboard" target="1.8" />
+      <module name="nacostest" target="1.8" />
+      <module name="ribbonconsumer" target="1.8" />
+      <module name="service-cloud" target="1.8" />
+      <module name="servicecloudtest" target="1.8" />
+      <module name="springcloudmybatisdemo1" target="1.8" />
+      <module name="streamdemo" target="1.8" />
+      <module name="streamdemo2" target="1.8" />
+      <module name="testservice" target="1.8" />
+      <module name="turbine" target="1.8" />
+      <module name="tx-manager" target="1.8" />
+      <module name="txmanager" target="1.8" />
+      <module name="txmanagertest" target="1.8" />
+      <module name="txtm" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

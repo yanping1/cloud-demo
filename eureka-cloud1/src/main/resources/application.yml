@@ -1,0 +1,38 @@
+server:
+  port: 1112
+
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+eureka:
+  instance:
+    hostname: eureka2.com
+#    ip-address: 192.168.3.179
+#    //租期更新时间间隔（默认30秒）
+    leaseRenewalIntervalInSeconds: 10
+#    租期到期时间（默认90秒）
+    leaseExpirationDurationInSeconds: 30
+#    preferIpAddress: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+#  注册中心，
+    register-with-eureka: false
+#    注册中心职责是维护服务实例，不需要检索服务
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${erlogin.ip}:1111/eureka/
+  server:
+#  （设为false，关闭自我保护主要）可以采取让其剔除不健康节点。
+    enable-self-preservation: false
+#    清理间隔（单位毫秒，默认是60*1000）
+    eviction-interval-timer-in-ms: 60000
+spring:
+  application:
+    name: demo-eureka
+  security:
+    user:
+      name: yanping
+      password: 123321

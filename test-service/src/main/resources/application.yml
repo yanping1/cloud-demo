@@ -1,0 +1,111 @@
+server:
+  port: 8081
+
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+
+
+spring:
+  application:
+    name: test
+  security:
+    user:
+      name: yanping
+      password: 123321
+  jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver  #mysql去  com.mysql.jdbc.Driver  org.git.mm.mysql.Driver   新版本com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC  #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5     #数据库连接池最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5    #最大连接数
+      max-wait-millis: 200 #等待连接获取的最大超时时间
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+#分布式事务
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+#        tx-service-group: yanping_tx_group
+
+#  datasource:
+#      #MySQL
+#      type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+#      username: root
+#      password: 123456
+#      initial-size: 10
+#      max-active: 100
+#      min-idle: 10
+#      max-wait: 6000
+#      pool-prepared-statements: true
+#      max-pool-prepared-statement-per-connection-size: 20
+#      time-between-eviction-runs-millis: 60000
+#      min-evictable-idle-time-millis: 300000
+#      #Oracle需要打开注释
+#      #validation-query: SELECT 1 FROM DUAL
+#      test-while-idle: true
+#      test-on-borrow: false
+#      test-on-return: false
+#      stat-view-servlet:
+#        enabled: true
+#        url-pattern: /druid/*
+        #login-username: admin
+        #login-password: admin
+#      filter:
+#        stat:
+#          log-slow-sql: true
+#          slow-sql-millis: 1000
+#          merge-sql: false
+#        wall:
+#          config:
+#            multi-statement-allow: true
+
+
+
+#spring:
+#  application:
+#    name: facerecognition-server8001 #以后服务发现使用，名字不能改。
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+#    driver-class-name: com.mysql.jdbc.Driver  #mysql去  com.mysql.jdbc.Driver  org.git.mm.mysql.Driver   新版本com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/facerecognition?useUnicode=true&characterEncoding=utf8&useSSL=false  #数据库名称
+#    username: root
+#    password: 123456
+#    dbcp2:
+#      min-idle: 5     #数据库连接池最小维持连接数
+#      initial-size: 5 #初始化连接数
+#      max-total: 5    #最大连接数
+#      max-wait-millis: 200 #等待连接获取的最大超时时间
+#  jackson:
+#    date-format: yyyy-MM-dd HH\:mm\:ss
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+#      instance-id: test-service
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
+
+mybatis:
+  configuration:
+    #开启驼峰
+    map-underscore-to-camel-case: true
+    #允许JDBC 生成主键。需要驱动器支持。如果设为了true，这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。  default:false
+    use-generated-keys: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: demo.test.entity
+# 分布式事物

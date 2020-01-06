@@ -1,0 +1,95 @@
+server:
+  port: 8099
+
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+
+spring:
+  application:
+    name: nacos-cloud
+  security:
+    user:
+      name: yanping
+      password: 123321
+  jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver  #mysql去  com.mysql.jdbc.Driver  org.git.mm.mysql.Driver   新版本com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC  #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5     #数据库连接池最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5    #最大连接数
+      #等待连接获取的最大超时时间
+      max-wait-millis: 200
+  # Nacos 注册中心地址
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yaml
+#        prefix: nacos-cloud
+#  profiles:
+#    active: dev
+
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: yanping_tx_group
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+#分布式事务
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+#      instance-id: test-service
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
+#mybatis:
+#  configuration:
+#    #开启驼峰
+#    map-underscore-to-camel-case: true
+#    #允许JDBC 生成主键。需要驱动器支持。如果设为了true，这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。  default:false
+#    use-generated-keys: true
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: demo.serve.entity
+#mybatis-plus:
+#  mapper-locations: classpath:/mappers/*.xml,classpath:/mybatis/mapper/**/*.xml
+#  #实体扫描，多个package用逗号或者分号分隔
+#  typeAliasesPackage: com.dkha.government.modules.entities,com.dkha.government.system.modules.**.entity,com.dkha.government.system.common.entity
+##  ,com.dkha.government.system.modules.log.entity
+#  global-config:
+#    #数据库相关配置
+#    db-config:
+#      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", ID_WORKER_STR:"全局唯一ID (字符串类型唯一ID)", UUID:"全局唯一ID UUID";
+#      id-type: ID_WORKER_STR
+#      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+#      field-strategy: NOT_NULL
+#      #驼峰下划线转换
+#      column-underline: true
+#      #db-type: mysql
+#    banner: false
+#  #原生配置
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#    call-setters-on-nulls: true
+#    jdbc-type-for-null: 'null'
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#logging:
+#  level:
+#   root: debug
+
+

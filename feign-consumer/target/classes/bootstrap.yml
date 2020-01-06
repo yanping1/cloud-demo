@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      name: feignconsumer
+#      profile: test
+      uri: http://yanping:123321@localhost:6666
+      label: master
+      #开启重试功能前需要如此设置
+      fail-fast: false
+      retry:
+#      重试间隔时间
+        initial-interval: 2000
+#      重试间隔乘数
+        multiplier: 2.2
+#      最大重试尝试次数
+        max-attempts: 7
+#      祖达间隔时间
+        max-interval: 30000
+  profiles:
+    active: dev
+feign:
+  httpclient:
+    connection-timeout: 5000

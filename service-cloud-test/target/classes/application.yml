@@ -1,0 +1,66 @@
+server:
+  port: 8085
+
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+
+spring:
+  application:
+    name: test-cloud
+  security:
+    user:
+      name: yanping
+      password: 123321
+  jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver  #mysql去  com.mysql.jdbc.Driver  org.git.mm.mysql.Driver   新版本com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC  #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5     #数据库连接池最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5    #最大连接数
+      max-wait-millis: 200 #等待连接获取的最大超时时间
+
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+
+#分布式事务
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+#      instance-id: test-service
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
+mybatis:
+  configuration:
+    #开启驼峰
+    map-underscore-to-camel-case: true
+    #允许JDBC 生成主键。需要驱动器支持。如果设为了true，这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。  default:false
+    use-generated-keys: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: demo.serve.entity
+
+ribbon:
+  ConnectTimeout: 2000 #ribbon 链接超时时长,默认2000
+  ReadTimeout: 5000 #ribbon 读取超时时长，默认5000
+  MaxAutoRetries: 0  #当前服务重试次数，默认0
+  MaxAutoRetriesNextServer: 1 #切换服务重试次数，默认1
+# 分布式事物
+
+logging:
+  level:
+   root: debug
+
+

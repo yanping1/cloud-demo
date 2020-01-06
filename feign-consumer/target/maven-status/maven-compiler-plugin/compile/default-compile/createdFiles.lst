@@ -1,0 +1,14 @@
+demo\feign\swagger\SwaggerConfig.class
+demo\feign\fallback\UserServiceFallBack.class
+demo\feign\entity\User.class
+demo\feign\config\FullLogConfiguration.class
+demo\feign\FeignApplication.class
+demo\feign\api\UserFacade.class
+META-INF\spring-configuration-metadata.json
+demo\feign\service\FeignService.class
+demo\feign\config\SeataConfiguration.class
+demo\feign\controllers\FeiController.class
+demo\feign\config\DataSourceConfiguration.class
+demo\feign\dao\UserDao.class
+demo\feign\service\FeignServiceImpl.class
+demo\feign\service\UserService.class

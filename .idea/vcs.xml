@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/config-server" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/eureka-cloud" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/eureka-cloud1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/feign-consumer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hystrix-dashboard" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nacos-test" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/ribbon-consumer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/service-cloud" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/service-cloud-test" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stream-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stream-demo2" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/test-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/turbine" vcs="" />
+    <mapping directory="$PROJECT_DIR$/tx-manager" vcs="Git" />
+  </component>
+</project>

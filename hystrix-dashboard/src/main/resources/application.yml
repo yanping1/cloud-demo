@@ -1,0 +1,36 @@
+server:
+  port: 9988
+
+info:
+  app.name: dashboard
+  company.name: localhost
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+#      instance-id: ribbon-consumer
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /
+spring:
+  application:
+    name: hystrix-dashboard
+  security:
+    user:
+      name: yanping
+      password: 123321
+

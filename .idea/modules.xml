@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloud-demo.iml" filepath="$PROJECT_DIR$/cloud-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/configserver.iml" filepath="$PROJECT_DIR$/config-server/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-cloud/eureka-cloud.iml" filepath="$PROJECT_DIR$/eureka-cloud/eureka-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-cloud1/eurekacloud1.iml" filepath="$PROJECT_DIR$/eureka-cloud1/eurekacloud1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign-consumer/feignconsumer.iml" filepath="$PROJECT_DIR$/feign-consumer/feignconsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrixdashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrixdashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nacos-test/nacostest.iml" filepath="$PROJECT_DIR$/nacos-test/nacostest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ribbon-consumer/ribbonconsumer.iml" filepath="$PROJECT_DIR$/ribbon-consumer/ribbonconsumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-cloud/service-cloud.iml" filepath="$PROJECT_DIR$/service-cloud/service-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-cloud-test/servicecloudtest.iml" filepath="$PROJECT_DIR$/service-cloud-test/servicecloudtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-demo/streamdemo.iml" filepath="$PROJECT_DIR$/stream-demo/streamdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stream-demo2/streamdemo2.iml" filepath="$PROJECT_DIR$/stream-demo2/streamdemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-service/testservice.iml" filepath="$PROJECT_DIR$/test-service/testservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tx-manager/txmanager.iml" filepath="$PROJECT_DIR$/tx-manager/txmanager.iml" />
+    </modules>
+  </component>
+</project>

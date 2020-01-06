@@ -1,0 +1,78 @@
+
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: 192.168.3.179
+
+spring:
+  application:
+    #项目名称
+    name: tx-manager
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.2.28:3306/tx-manager?characterEncoding=UTF-8
+#    username: rooot
+#    password: 123456
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类
+    driver-class-name: com.mysql.jdbc.Driver  #mysql去  com.mysql.jdbc.Driver  org.git.mm.mysql.Driver   新版本com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/tx-manager?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC  #数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5     #数据库连接池最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5    #最大连接数
+      max-wait-millis: 200 #等待连接获取的最大超时时间
+  #redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+server:
+  port: 7970
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+    # 注册名
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    # 设置注册到服务的为ip
+    prefer-ip-address: true
+mybatis:
+  configuration:
+    #开启驼峰
+    map-underscore-to-camel-case: true
+    #允许JDBC 生成主键。需要驱动器支持。如果设为了true，这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。  default:false
+    use-generated-keys: true
+tx-lcn:
+  manager:
+    # TxManager ip(client请求ip)
+    host: 127.0.0.1
+    # client 请求端口
+    port: 8070
+    # 心跳检测时间 单位：ms
+    heart-time: 12000
+    #事务执行总时间 单位ms  默认为36000
+    dtx-time: 5000
+    # 事务处理并发等级. 默认为机器逻辑核心数5倍
+    concurrent-level: 20
+    admin-key: yanping
+    # 分布式事务锁超时时间 默认为-1，当-1时会用tx-lcn.manager.dtx-time的时间
+#    dtx-lock-time: ${tx-lcn.manager.dtx-time}
+    dtx-lock-time: 36000
+    #异常回调开关。开启时请制定ex-url
+    ex-url-enabled: false
+  logger:
+    # 开启日志
+    enabled: true
+
+logging:
+  level:
+   root: info
+   com:
+    codingapi:
+      txlcn: DEBUG

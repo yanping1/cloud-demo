@@ -1,0 +1,13 @@
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\api\UserFacade.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\dao\UserDao.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\config\FullLogConfiguration.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\controllers\FeiController.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\FeignApplication.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\fallback\UserServiceFallBack.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\entity\User.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\service\FeignServiceImpl.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\swagger\SwaggerConfig.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\service\UserService.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\config\DataSourceConfiguration.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\service\FeignService.java
+D:\workspace\cloud-demo\feign-consumer\src\main\java\demo\feign\config\SeataConfiguration.java

@@ -1,0 +1,9 @@
+demo\test\entity\User.class
+demo\TestApplication.class
+META-INF\spring-configuration-metadata.json
+demo\test\swagger\SwaggerConfig.class
+demo\test\config\DruidConfig.class
+demo\test\service\UserService.class
+demo\test\config\DataSourceConfig.class
+demo\test\controllers\TestController.class
+demo\test\dao\UserDao.class

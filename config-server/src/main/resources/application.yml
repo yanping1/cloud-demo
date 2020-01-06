@@ -1,0 +1,58 @@
+server:
+  port: 6666
+info:
+  app.name: config
+  company.name: localhost
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+erlogin:
+  username: yanping
+  userpass: 123321
+  ip: localhost
+spring:
+  application:
+    name: config-server
+    #配置文件
+#  profiles:
+#    active: native
+  cloud:
+    config:
+      server:
+      #采用git配置文件
+        git:
+          uri: http://10.51.10.201:10080/yanping/cloud-demo/
+          username: yanping
+          password: Dkha123
+          strict-host-key-checking: false
+#          search-paths: /repository/*
+          search-paths: repository
+      #开启重试功能前需要如此设置
+#      fail-fast: false
+#      设置配置中心的服务名id
+#      discovery:
+#        service-id: config-server
+        #本地配置的目录
+#        native:
+#          search-locations: classpath:config/
+  security:
+    user:
+      name: ${erlogin.username}
+      password: ${erlogin.userpass}
+#encrypt:
+#  key-store:
+#    location: classpath:/server.jks
+#    password: letmein
+#    alias: mytestkey
+##    secret: changeme
+#encrypt:
+#  key: 0e010e17-2529-4581-b907-c8edcfd6be09
+
+eureka:
+  client:
+    service-url:
+     defaultZone: http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1111/eureka/,http://${erlogin.username}:${erlogin.userpass}@${erlogin.ip}:1112/eureka/
+  instance:
+      instance-id: config-center
+      prefer-ip-address: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30

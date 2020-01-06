@@ -1,0 +1,9 @@
+com\work\framework\config\DruidConfig.class
+com\work\framework\config\DataSourceConfiguration.class
+com\work\framework\dao\StorageDAO.class
+com\work\framework\NacosServiceApplication.class
+com\work\framework\service\StorageService.class
+com\work\framework\swagger\SwaggerConfig.class
+META-INF\spring-configuration-metadata.json
+com\work\framework\controller\StorageController.class
+com\work\framework\entity\Storage.class

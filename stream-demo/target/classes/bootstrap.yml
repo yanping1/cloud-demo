@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      name: streamdemo
+      profile: test
+      uri: http://yanping:123321@localhost:6666
+      label: master
+    stream:
+      bindings:
+        input:
+          group: Service-A
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host:
+#  profiles:
+#    active: dev
